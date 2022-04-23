@@ -31,8 +31,10 @@ plot <- plot + geom_line(data=bpoints, aes(x = length, y = time)) + geom_line(da
 plot
 
 #zadanie 5
-#data <- read.csv("C:/Users/Szymon/MOWNiT/lab5/covid_polska.csv") %>% filter(location == "Poland") %>% select(location, date, new_cases)
-#data
-#covid <- ggplot(data, aes(x = as.Date(date), y = new_cases)) + geom_point()
-#covid <- covid + ylab("new cases") + xlab("date") + ggtitle("New covid cases in Poland")
+data <- read.csv("C:/Users/Szymon/MOWNiT/lab5/covid_polska.csv") %>% filter(location == "Poland") %>% select(location, date, all_cases)
+data
+covid <- ggplot(data, aes(x = as.Date(date), y = new_cases)) + geom_point()
+covid <- covid + ylab("new cases") + xlab("date") + ggtitle("New covid cases in Poland")
 #covid
+
+#zadanie 6
