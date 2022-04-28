@@ -8,7 +8,7 @@ avg_res$time_sd <- aggregate(time ~ length:operation, data=results, FUN="sd")$ti
 avg_res
 
 #zadanie 2
-plot <- ggplot(avg_res, aes(x = length, y = time, color = operation)) + geom_point()# + geom_line()
+plot <- ggplot(avg_res, aes(x = length, y = time, color = operation)) + geom_point() # + geom_line()
 plot <- plot + ylab("time [ms]") + xlab("length of an array") + ggtitle("matrix multiplication methods and their run time")
 plot
 
@@ -16,7 +16,7 @@ plot
 plot <- plot + geom_errorbar(aes(ymin = time - time_sd, ymax = time + time_sd))
 plot
 
-#zaadanie 4
+#zadanie 4
 bavg_res <- avg_res %>% filter(operation == "blas")
 navg_res <- avg_res %>% filter(operation == "naive")
 bfit <- lm(time ~ poly(length, 3, raw=TRUE), data=bavg_res)
